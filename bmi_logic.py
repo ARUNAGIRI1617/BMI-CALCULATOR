@@ -2,7 +2,7 @@ Height=float(input("Enter your height in centimeters: "))
 
 Weight=float(input(" your Weight in Kg: "))
 
-Height = Height/100
+Height = Height/100 #converting centimetre into metre
 
 def bmi_calc(Height, Weight):
 
