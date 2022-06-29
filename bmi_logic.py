@@ -6,7 +6,7 @@ Height = Height/100
 
 def bmi_calc(Height, Weight):
 
-    BMI=Weight/(Height*Height)
+    BMI=Weight/(Height)**2
 
     print("your Body Mass Index is: ",BMI)
 
