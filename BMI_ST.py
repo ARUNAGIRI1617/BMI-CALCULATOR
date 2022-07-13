@@ -46,22 +46,22 @@ def bmi_calc(Height, Weight):
   BMI=Weight/(Height)**2
   
   if(BMI>0):
-    if(BMI<=16):
-      st.text("You are Severely underweight")
-    elif(BMI<=18.5):
+    if(BMI<=18.5):
       st.text("You are Underweight")
-    elif(BMI<=25):
+    elif(BMI>=18.5 and BMI<=25):
       st.text("You are Healthy")
-    elif(BMI<=30):
+    elif(BMI>=25 and BMI<=30):
       st.text("You are Overweight")
+    elif(BMI>=30 and BMI<=35):
+      st.text("You are Obesity Class_1 ")
+    elif(BMI>=35 and BMI<=40):
+      st.text("You are Obesity Class_2")
     else: 
-      st.text("You are severely overweight")
+      st.text("You are Severely Obesity Class_3")
   st.success(f"Your BMI is {BMI}")
 
 if st.button("CACULATE"):
   body_mass_index=bmi_calc(Height, Weight)
-
-
 
 
 
