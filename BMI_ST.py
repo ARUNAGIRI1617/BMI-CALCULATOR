@@ -35,15 +35,31 @@ Class 3: BMI of 40 or higher.
 
 Class 3 obesity is sometimes categorized as “severe” obesity.""")
 
-                  """Integrating input with streamlit"""
+#Integrating input with streamlit
 
-weight = st.number_input("Enter your Weight in KG", step = 0.1)
+Weight = st.number_input("Enter your Weight in KG", step = 0.1)
 
 height = st.number_input("Enter your Height in Meters")
+Height = height/100#converting centimetre into metre
 
-bmi = weight/(height)**2
+def bmi_calc(Height, Weight):
+  BMI=Weight/(Height)**2
+  
+  if(BMI>0):
+    if(BMI<=16):
+      st.text("You are Severely underweight")
+    elif(BMI<=18.5):
+      st.text("You are Underweight")
+    elif(BMI<=25):
+      st.text("You are Healthy")
+    elif(BMI<=30):
+      st.text("You are Overweight")
+    else: 
+      st.text("You are severely overweight")
+  st.success(f"Your BMI is {BMI}")
 
-st.success(f"Your BMI is {bmi}")
+if st.button("CACULATE"):
+  body_mass_index=bmi_calc(Height, Weight)
 
 
 
