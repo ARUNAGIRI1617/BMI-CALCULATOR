@@ -42,9 +42,9 @@ Weight = st.number_input("Enter your Weight in KG", step = 0.1)
 height = st.number_input("Enter your Height in Meters")
 Height = height/100#converting centimetre into metre
 
-def bmi_calc(Height, Weight):
-  BMI=Weight/(Height)**2
+def bmi_calc(BMI):
   
+
   if(BMI>0):
     if(BMI<=18.5):
       st.text("You are Underweight")
@@ -58,10 +58,20 @@ def bmi_calc(Height, Weight):
       st.text("You are Obesity Class_2")
     else: 
       st.text("You are Severely Obesity Class_3")
-  st.success(f"Your BMI is {BMI}")
+  
 
 if st.button("CACULATE"):
-  body_mass_index=bmi_calc(Height, Weight)
+  BMI=Weight/(Height)**2
+
+  st.success(f"Your BMI is {BMI}")
+
+  body_mass_index=bmi_calc(BMI)
+  
+
+
+
+
+
 
 
 
